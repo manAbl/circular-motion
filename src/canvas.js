@@ -9,28 +9,33 @@ canvas.width = innerWidth;
 canvas.height = innerHeight;
 
 const mouse = {
-    x: innerWidth / 2,
-    y: innerHeight / 2
+  x: innerWidth / 2,
+  y: innerHeight / 2
 };
 
-const colors = ['#00bdff', '#4d39ce', '#088eff'];
+const colors = [
+  '#0077FF',
+  '#00BFFF',
+  '#8324DB'
+];
 
 // Event Listeners
 addEventListener('mousemove', event => {
-    mouse.x = event.clientX
-    mouse.y = event.clientY
+  mouse.x = event.clientX
+  mouse.y = event.clientY
 });
 
 addEventListener('resize', () => {
-    canvas.width = innerWidth
-    canvas.height = innerHeight
+  canvas.width = innerWidth
+  canvas.height = innerHeight
 
-    init()
+  init()
 });
 
 
 
-const randomColors = colors => colors[Math.floor(Math.random() * colors.length)];
+const randomColors = colors =>
+  colors[Math.floor(Math.random() * colors.length)];
 
 const randomNumberForRange = (min, max) =>
   Math.floor(Math.random() * (max - min + 1) + min);
@@ -44,7 +49,7 @@ function Particle (x, y, radius, color) {
   this.radius = radius;
   this.color = color;
   this.radians = Math.random() * Math.PI * 2;
-  this.velocity = 0.08;
+  this.velocity = 0.1;
   this.centerDistance = randomNumberForRange(50, 120);
   this.lastMousePosition = {
     x: x,
@@ -106,7 +111,7 @@ let particles;
 // Animation Loop
 (function animate() {
   requestAnimationFrame(animate);
-  c.fillStyle = 'rgba(255,255,255, 0.05)';
+  c.fillStyle = 'rgba(255,255,255, .05)';
   c.fillRect(0, 0, canvas.width, canvas.height);
 
   // animating each particle

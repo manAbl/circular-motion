@@ -117,7 +117,7 @@ var mouse = {
   y: innerHeight / 2
 };
 
-var colors = ['#00bdff', '#4d39ce', '#088eff'];
+var colors = ['#0077FF', '#00BFFF', '#8324DB'];
 
 // Event Listeners
 addEventListener('mousemove', function (event) {
@@ -149,7 +149,7 @@ function Particle(x, y, radius, color) {
   this.radius = radius;
   this.color = color;
   this.radians = Math.random() * Math.PI * 2;
-  this.velocity = 0.05;
+  this.velocity = 0.1;
   this.centerDistance = randomNumberForRange(50, 120);
   this.lastMousePosition = {
     x: x,
@@ -207,7 +207,7 @@ var particles = void 0;
 // Animation Loop
 (function animate() {
   requestAnimationFrame(animate);
-  c.fillStyle = 'rgba(255,255,255, 0.05)';
+  c.fillStyle = 'rgba(255,255,255, .05)';
   c.fillRect(0, 0, canvas.width, canvas.height);
 
   // animating each particle
