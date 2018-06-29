@@ -1,5 +1,3 @@
-import utils from './utils';
-
 const $ = name => document.querySelector(name);
 
 const canvas = $('canvas');
